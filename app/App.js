@@ -72,8 +72,8 @@ TabsNav.tabBarOptions = ({navigation}) => {
 
   tabBarOptions.style.overflow = 'hidden';
   tabBarOptions.style.position = 'absolute';
-  tabBarOptions.style.bottom = -60;
-  // tabBarOptions.activeTintColor = '#CAB763';
+  tabBarOptions.style.bottom = 0;
+  tabBarOptions.activeTintColor = '#CAB763';
 
   return {tabBarOptions}
 };

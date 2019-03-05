@@ -1,14 +1,15 @@
 import React, {Component} from "react";
-import {Platform, StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 
-const instructions = Platform.select({
-    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-    android:
-        'Double tap R on your keyboard to reload,\n' +
-        'Shake or press menu button for dev menu',
-});
 
 global.tab = 2;
+global.primeraConexion = true;
+
+
+const initialState = {
+
+};
+
 
 export default class App extends Component {
 
@@ -24,12 +25,34 @@ export default class App extends Component {
         }
     };
 
+
+    constructor(){
+        super();
+        this.state = initialState;
+    }
+
+    handleTabFocus = () => {
+        global.tab = 2;
+        this._ismounted = true;
+    };
+
+    componentWillMount(){
+        this.props.navigation.setParams({
+            onTabFocus: this.handleTabFocus,
+        })
+    }
+
+    async componentDidMount(){
+        this._ismounted = true;
+
+    }
+
+
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
                 <Text style={styles.instructions}>To get started, edit App.js</Text>
-                <Text style={styles.instructions}>{instructions}</Text>
             </View>
         );
     }

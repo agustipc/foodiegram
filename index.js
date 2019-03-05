@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import {AppRegistry} from 'react-native';
 import App from './app/App';
-import {name as appName} from './app.json';
+import {name} from './app.json';
 
 export class VeggieGram extends Component {
     render() {
@@ -10,4 +10,4 @@ export class VeggieGram extends Component {
     }
 }
 
-AppRegistry.registerComponent(appName, () => VeggieGram);
+AppRegistry.registerComponent(name, () => VeggieGram);
